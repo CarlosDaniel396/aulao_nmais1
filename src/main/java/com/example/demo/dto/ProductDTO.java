@@ -26,6 +26,7 @@ public class ProductDTO {
 	public ProductDTO(Product product) {
 		id = product.getId();
 		name = product.getName();
+		// Quando buscadas, as categorias já estarão em memória e não irá no banco de dados novamente
 		categories = product.getCategories().stream().map(x -> new CategoryDTO(x)).collect(Collectors.toList());
 	}
 
